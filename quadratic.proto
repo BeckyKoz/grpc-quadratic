@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package quadratic;
+
+// The quadratic solver service definition.
+service QuadraticSolver {
+    // Solves a quadratic equation 
+    rpc SolveQuadratic (QuadraticRequest) returns (QuadraticReply) {};
+
+}
+
+// The request message containing the user's coefficients.
+message QuadraticRequest {
+    float coeffa = 1;
+    float coeffb = 2;
+    float coeffc = 3;
+
+}
+
+// The response message containing the solution to the quadratic equation
+message QuadraticReply {
+    string solution = 4;
+}
+
